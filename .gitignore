@@ -1,0 +1,4 @@
+uploads/*.jpg
+uploads/*.png
+venv/
+__pycache__/
