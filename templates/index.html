@@ -1,12 +1,14 @@
 {% extends "base.html" %} {% block content %}
 
+<div class="d-none d-md-block">
 <body>
-This web application is based on a 3-layer convolutional neural network (CNN), trained to recognise malaria parasite from human blood sample. The neural network achieved accuracy exceeding 95% on the relevant test set of more than 2700 blood sample images. Please note that the predictive accuracy of the model, depends on the quality and quantity of the training data. Therefore the model has limitations and cannot be used for definite clinical predictions! Instead it can be used for research and comparison purposes (please see notes below).
+Our application can be used for analysing blood sample images quickly to check for the presence of the malaria parasite.
+Simply click on the "Select Image" button, select an image, and click on the "Predict" button to get the diagnosis!
 </body>
+</div>
 
-<h2></h2>
-
-<div>
+<center>
+<div class="select-button" style="margin-top: 3rem;">
     <form id="upload-file" method="post" enctype="multipart/form-data">
         <label for="imageUpload" class="upload-label">
             Select Image
@@ -31,11 +33,14 @@ This web application is based on a 3-layer convolutional neural network (CNN), t
     </h3>
 
 </div>
+</center>
 <body>
+<div style="position: fixed; bottom: 1rem;">
 NOTES
 <ul>
 <li>This deep learning model has been trained, validated, and tested using the following dataset: <a href="https://data.lhncbc.nlm.nih.gov/public/Malaria/cell_images.zip">National Library of Medicine</a></li>
-<li><b style="color:red;">The suitability of this deep learning model for clinical use has not been validated. Therefore it cannot be used for any clinical purpose! It can be used for research purposes and for comparison with other similar models.</b></li>
+<li><b style="color:red;">DISCLAIMER: Uploading images other than those of blood cell samples could lead to incorrect diagnoses. Please use this application with care.</b></li>
 </ul>
+</div>
 </body>
 {% endblock %}
