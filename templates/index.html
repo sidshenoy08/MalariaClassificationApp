@@ -1,46 +1,53 @@
 {% extends "base.html" %} {% block content %}
 
 <div class="d-none d-md-block">
-<body>
-Our application can be used for analysing blood sample images quickly to check for the presence of the malaria parasite.
-Simply click on the "Select Image" button, select an image, and click on the "Predict" button to get the diagnosis!
-</body>
+
+    <body>
+        Our application can be used for analysing blood sample images quickly to check for the presence of the malaria
+        parasite.
+        Simply click on the "Select Image" button, select an image, and click on the "Predict" button to get the
+        diagnosis!
+    </body>
 </div>
 
 <center>
-<div class="select-button" style="margin-top: 3rem;">
-    <form id="upload-file" method="post" enctype="multipart/form-data">
-        <label for="imageUpload" class="upload-label">
-            Select Image
-        </label>
-        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
-    </form>
+    <div class="select-button" style="margin-top: 3vh;">
+        <form id="upload-file" method="post" enctype="multipart/form-data">
+            <label for="imageUpload" class="upload-label">
+                Select Image
+            </label>
+            <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+        </form>
 
-    <div class="image-section" style="display:none;">
-        <div class="img-preview">
-            <div id="imagePreview">
+        <div class="image-section" style="display:none;">
+            <div class="img-preview">
+                <div id="imagePreview">
+                </div>
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
             </div>
         </div>
-        <div>
-            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
-        </div>
+
+        <div class="loader" style="display:none;"></div>
+
+        <h3 id="result">
+            <span> </span>
+        </h3>
+
     </div>
-
-    <div class="loader" style="display:none;"></div>
-
-    <h3 id="result">
-        <span> </span>
-    </h3>
-
-</div>
 </center>
+
 <body>
-<div style="position: fixed; bottom: 1rem;">
-NOTES
-<ul>
-<li>This deep learning model has been trained, validated, and tested using the following dataset: <a href="https://data.lhncbc.nlm.nih.gov/public/Malaria/cell_images.zip">National Library of Medicine</a></li>
-<li><b style="color:red;">DISCLAIMER: Uploading images other than those of blood cell samples could lead to incorrect diagnoses. Please use this application with care.</b></li>
-</ul>
-</div>
+    <div style="position: fixed; bottom: 1rem;" class="bottom-text">
+        NOTES
+        <ul>
+            <li>This deep learning model has been trained, validated, and tested using the following dataset: <a
+                    href="https://data.lhncbc.nlm.nih.gov/public/Malaria/cell_images.zip">National Library of
+                    Medicine</a></li>
+            <li><b style="color:red;">DISCLAIMER: Uploading images other than those of blood cell samples could lead to
+                    incorrect diagnoses. Please use this application with care.</b></li>
+        </ul>
+    </div>
 </body>
 {% endblock %}
