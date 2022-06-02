@@ -2,6 +2,10 @@ body {
     background-color: #E4D1B9;
 }
 
+.intro {
+    font-size: 1.2vw;
+}
+
 .img-preview {
     /* width: 256px; */
     /* width: 16rem; */
@@ -55,6 +59,14 @@ input[type="file"] {
     animation: spin 1s linear infinite;
 }
 
+.result-text {
+    font-size: 2vw;
+}
+
+.bottom-text {
+    font-size: 1.2vw;
+}
+
 @media screen and (max-width: 992px) {
     .img-preview {
         width: 25vw;
@@ -66,9 +78,23 @@ input[type="file"] {
     }
 }
 
-@media screen and (max-width: 280px) {
+/* @media screen and (max-width: 280px) {
     .bottom-text {
         display: none;
+    }
+} */
+
+@media screen and (max-width: 1023px) {
+    .intro {
+        font-size: 3vw;
+    }
+
+    .result-text {
+        font-size: 4vw;
+    }
+
+    .bottom-text {
+        font-size: 3vw;
     }
 }
 
